@@ -1,0 +1,23 @@
+package m426.todoapp.todoappbe.todo;
+
+import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+import m426.todoapp.todoappbe.task.Task;
+
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
+public class TodoList {
+    @Id
+    @Column(name = "todoList_id")
+    int todoListId;
+    @Column(name = "name", length = 20)
+    String name;
+    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinColumn(name = "id_task", nullable = false, referencedColumnName = "task_id")
+    Task task;
+}
