@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import m426.todoapp.todoappbe.state.StateType;
+import m426.todoapp.todoappbe.todo.TodoList;
 
 @Entity
 @Getter
@@ -21,5 +22,7 @@ public class Task {
     String description;
     @ManyToOne(optional = false, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @Enumerated(EnumType.STRING)
-    private StateType state;
+    StateType state;
+    @ManyToOne(optional = false, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    TodoList todoList;
 }

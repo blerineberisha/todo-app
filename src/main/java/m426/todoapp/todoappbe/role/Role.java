@@ -3,7 +3,7 @@ package m426.todoapp.todoappbe.role;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-import m426.todoapp.todoappbe.auth.Auth;
+import m426.todoapp.todoappbe.authorities.Authorities;
 import org.springframework.data.annotation.Id;
 
 import java.util.HashSet;
@@ -27,5 +27,5 @@ public class Role {
             joinColumns = { @JoinColumn(name = "role_id") },
             inverseJoinColumns = { @JoinColumn(name = "authority_id") }
     )
-    Set<Auth> authorities = new HashSet<>();
+    Set<Authorities> authorities = new HashSet<>();
 }

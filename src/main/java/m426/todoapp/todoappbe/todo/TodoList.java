@@ -5,6 +5,9 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import m426.todoapp.todoappbe.task.Task;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
@@ -19,5 +22,5 @@ public class TodoList {
     String name;
     @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "id_task", nullable = false, referencedColumnName = "task_id")
-    Task task;
+    Set<Task> task = new HashSet<>();
 }
