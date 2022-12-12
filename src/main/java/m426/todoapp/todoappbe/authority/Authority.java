@@ -1,10 +1,9 @@
-package m426.todoapp.todoappbe.authorities;
+package m426.todoapp.todoappbe.authority;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import m426.todoapp.todoappbe.role.Role;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,7 +13,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Authorities {
+public class Authority {
     @Id
     @Column(name = "authority_id")
     int authId;

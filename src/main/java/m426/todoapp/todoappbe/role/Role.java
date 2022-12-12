@@ -1,9 +1,9 @@
 package m426.todoapp.todoappbe.role;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-import m426.todoapp.todoappbe.authorities.Authorities;
+import m426.todoapp.todoappbe.authority.Authority;
 import org.springframework.data.annotation.Id;
 
 import java.util.HashSet;
@@ -27,5 +27,5 @@ public class Role {
             joinColumns = { @JoinColumn(name = "role_id") },
             inverseJoinColumns = { @JoinColumn(name = "authority_id") }
     )
-    Set<Authorities> authorities = new HashSet<>();
+    Set<Authority> authorities = new HashSet<>();
 }

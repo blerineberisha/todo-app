@@ -1,6 +1,6 @@
 package m426.todoapp.todoappbe.users;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import m426.todoapp.todoappbe.role.Role;
