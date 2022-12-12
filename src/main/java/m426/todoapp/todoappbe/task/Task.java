@@ -20,7 +20,6 @@ public class Task {
     String name;
     @Column(name = "description", length = 100)
     String description;
-    @ManyToOne(optional = false, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @Enumerated(EnumType.STRING)
     StateType state;
     @ManyToOne(optional = false, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
