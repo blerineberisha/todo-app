@@ -1,4 +1,4 @@
 package m426.todoapp.todoappbe.todo;
 
-public interface TodoMapper {
+public class TodoListDTO {
 }
