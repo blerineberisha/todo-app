@@ -15,7 +15,8 @@ import java.util.Set;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Authority {
     @Id
-    @Column(name = "authority_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "authority_id", nullable = false)
     int authId;
     @Column(name = "authority_name", length = 20, unique = true)
     String authName;
