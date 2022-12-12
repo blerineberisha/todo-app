@@ -3,4 +3,4 @@
 ![image](https://user-images.githubusercontent.com/69903318/205884484-d99298fb-86fc-4dad-b180-7a2b99ddafa6.png)
 
 ## ERD
-![image](https://user-images.githubusercontent.com/69908299/205884816-b7f59f90-f125-4f0f-9081-ec89d16b0971.png)
+![image](https://user-images.githubusercontent.com/69908299/207170709-cc5757d4-9e82-4aad-bf06-4acd78d52d5b.png)
