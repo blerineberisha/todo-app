@@ -9,6 +9,7 @@ import m426.todoapp.todoappbe.task.Task;
 
 import java.util.HashSet;
 import java.util.Set;
+import m426.todoapp.todoappbe.users.Users;
 
 @Entity
 @Getter
@@ -26,4 +27,7 @@ public class TodoList {
     @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, mappedBy = "todoList")
     @JsonBackReference
     Set<Task> tasks = new HashSet<>();
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "owner", referencedColumnName = "users_id", nullable = false)
+    private Users user;
 }
