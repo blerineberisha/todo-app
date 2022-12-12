@@ -4,8 +4,6 @@ import javax.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import m426.todoapp.todoappbe.authority.Authority;
-import org.springframework.data.annotation.Id;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,7 +15,8 @@ import java.util.Set;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Role {
     @Id
-    @Column(name = "role_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "role_id", nullable = false)
     int roleId;
     @Column(name = "role_name", length = 20, unique = true)
     String roleName;

@@ -1,6 +1,8 @@
 package m426.todoapp.todoappbe.todo;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import m426.todoapp.todoappbe.task.Task;
@@ -16,11 +18,12 @@ import java.util.Set;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class TodoList {
     @Id
-    @Column(name = "todoList_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "todoList_id", nullable = false)
     int todoListId;
     @Column(name = "name", length = 20)
     String name;
-    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinColumn(name = "id_task", nullable = false, referencedColumnName = "task_id")
-    Set<Task> task = new HashSet<>();
+    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, mappedBy = "todoList")
+    @JsonBackReference
+    Set<Task> tasks = new HashSet<>();
 }

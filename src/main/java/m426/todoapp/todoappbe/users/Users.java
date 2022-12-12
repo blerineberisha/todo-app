@@ -13,7 +13,8 @@ import m426.todoapp.todoappbe.role.Role;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Users {
     @Id
-    @Column(name = "users_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "users_id", nullable = false)
     int usersId;
     @Column(name = "username", length = 20, unique = true)
     String username;
