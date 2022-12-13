@@ -5,33 +5,21 @@ VALUES
 
 insert into vinosfue_todoapp.authority(authority_id, authority_name)
 VALUE
-    (1, 'SEE_ALL_USERS'),
-    (2, 'SEE_OWN_TASKS'),
-    (3, 'SEE_ALL_TASKS'),
-    (4, 'SEE_ALL_TODOLIST'),
-    (5, 'SEE_OWN_TODOLIST'),
-    (6, 'CREATE_TODOLIST'),
-    (7, 'CREATE_TASKS'),
-    (8, 'DELETE_TODOLIST'),
-    (9, 'DELETE_TASK'),
-    (10, 'EDIT_TASK'),
-    (11, 'EDIT_TODOLIST'),
-    (12, 'EDIT_USER');
+    (1, 'SEE_ALL'),
+    (2, 'SEE_OWN'),
+    (3, 'CREATE'),
+    (4, 'DELETE'),
+    (5, 'EDIT'),
+    (6, 'EDIT_USERS');
 
 insert into vinosfue_todoapp.role_authority(role_id, authority_id)
 VALUE
     (1, 1),
-    (1, 3),
-    (1, 4),
-    (1, 12),
+    (1, 6),
     (2, 2),
-    (2, 5),
-    (2, 6),
-    (2, 7),
-    (2, 8),
-    (2, 9),
-    (2, 10),
-    (2, 11);
+    (2, 3),
+    (2, 4),
+    (2, 5);
 
 insert into users(users_id, email, first_name, last_name, password, username, id_role)
 VALUE
