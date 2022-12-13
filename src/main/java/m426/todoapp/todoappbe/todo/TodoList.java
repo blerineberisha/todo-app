@@ -27,7 +27,8 @@ public class TodoList {
     @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, mappedBy = "todoList")
     @JsonBackReference
     Set<Task> tasks = new HashSet<>();
-    @ManyToOne
+
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.EAGER)
     @JoinColumn(name = "id_users", referencedColumnName = "users_id", nullable = false)
     Users user;
 }
