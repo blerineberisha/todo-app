@@ -15,7 +15,7 @@ import m426.todoapp.todoappbe.todo.TodoList;
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "task_id", nullable = false)
+    @Column(name = "task_id")
     int taskId;
     @Column(name = "name", length = 20)
     String name;
