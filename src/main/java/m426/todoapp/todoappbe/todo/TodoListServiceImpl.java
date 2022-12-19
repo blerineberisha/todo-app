@@ -1,22 +1,23 @@
 package m426.todoapp.todoappbe.todo;
 
-import java.util.Optional;
-import javax.management.InstanceNotFoundException;
+import java.util.List;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@NoArgsConstructor
 public class TodoListServiceImpl implements TodoListService{
 
   @Autowired
   private TodoListRepository todoListRepository;
 
   @Override
-  public Optional<TodoList> getAllToDoLists() throws NullPointerException, InstanceNotFoundException {
-    Optional<TodoList> toDoLists = todoListRepository.findAllByName();
-    if (!(toDoLists.isEmpty() || toDoLists == null)) {
-      return toDoLists;
+  public List<TodoList> getAllToDoLists() throws NullPointerException {
+  List<TodoList> toDoLists = todoListRepository.findAll();
+    if (toDoLists.isEmpty()) {
+      throw new NullPointerException("Todo List not found");
     } else
-      throw new NullPointerException("Location List is empty");
+      return toDoLists;
   }
 }

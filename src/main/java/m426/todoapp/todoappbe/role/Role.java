@@ -16,7 +16,8 @@ import java.util.Set;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Role {
     @Id
-    @Column(name = "role_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "role_id", nullable = false)
     int roleId;
     @Column(name = "role_name", length = 20, unique = true)
     String roleName;
