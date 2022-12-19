@@ -1,23 +1,23 @@
 package m426.todoapp.todoappbe.task;
 
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 //import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequiredArgsConstructor
 @RequestMapping("/task")
+@AllArgsConstructor
 public class TaskController {
 
     @Autowired
-    private final TaskService tService;
+    private final TaskService taskService;
 
     @PutMapping("/{id}")
-    //@CrossOrigin(origins = "*")
     //@PreAuthorize("permitAll()")
     public ResponseEntity<Task> updateTask(@PathVariable("id") int id, @RequestBody Task task){
-        return ResponseEntity.ok().body(tService.updateTask(task, id));
+        return new ResponseEntity<>(taskService.updateTask(task, id), HttpStatus.OK);
     }
 }
