@@ -1,9 +1,7 @@
 .gradle
 *.class
 *.bin
-build/
-build/tmp/
-build/resources/
+*/build/*
 out/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
