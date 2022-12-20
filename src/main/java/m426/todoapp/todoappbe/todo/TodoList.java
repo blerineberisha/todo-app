@@ -3,6 +3,7 @@ package m426.todoapp.todoappbe.todo;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import m426.todoapp.todoappbe.task.Task;
@@ -25,7 +26,7 @@ public class TodoList {
     @Column(name = "name", length = 20)
     String name;
     @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, mappedBy = "todoList")
-    @JsonBackReference
+    @JsonManagedReference
     Set<Task> tasks = new HashSet<>();
 
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.EAGER)
