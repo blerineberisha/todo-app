@@ -5,6 +5,3 @@ build/**
 .idea
 .gradle
 gradle
-*
-!/**/
-!*.*
