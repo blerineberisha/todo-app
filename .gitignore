@@ -9,6 +9,15 @@ out/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+# Ignore files with extension `.class` & `.sm`
+*.class
+*.sm
+
+# Ignore `bin` dir
+bin/
+# or
+*/bin/*
+
 ### STS ###
 .apt_generated
 .classpath
