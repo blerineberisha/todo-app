@@ -1,7 +1,8 @@
+
 *.bin
 *.class
 out/*
-build/**
+build/
 .idea
 .gradle
 gradle
