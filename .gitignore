@@ -3,7 +3,6 @@
 *.bin
 .bin
 *.lock
-!yarn.lock
 build/
 out/
 !gradle/wrapper/gradle-wrapper.jar
